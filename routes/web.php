@@ -38,8 +38,7 @@ route::get('/news-details',[GuestController::class,'newsDetail'])->name('news-de
 route::get('/complaint',[GuestController::class,'complaint'])->name('complaint');
 route::get('/project-details',[GuestController::class,'projectDetail'])->name('project-details');
 
-route::get('/search',[GuestController::class,'searchData'])->name('serach');
-
+route::get('/unit/search',[GuestController::class,'searchData'])->name('search');
 route::get('/unit',[GuestController::class,'unit'])->name('unit');
 route::get('/unit-details/{id}',[GuestController::class,'unitDetail'])->name('unit-details');
 

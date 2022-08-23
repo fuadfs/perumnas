@@ -2,6 +2,11 @@
       <div class="container">
       
         <div class="row mb-5">
+          <div>
+            @if($data_empty != null)
+              <p>{{$data_empty}}</p>
+            @endif
+          </div>
           @foreach($data_unit as $data)
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="property-entry h-100">

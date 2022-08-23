@@ -1,7 +1,7 @@
 <div class="site-section site-section-sm pb-0">
       <div class="container">
         <div class="row">
-          <form action="{{ url('search') }}" method="GET" class="form-search col-md-12" style="margin-top: -100px;">
+          <form action="{{ route('search') }}" method="GET" class="form-search col-md-12" style="margin-top: -100px;">
             @csrf
             <div class="search-bar">
                 <input type="text" name="search" class="form-control" placeholder="Search here">

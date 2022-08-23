@@ -98,7 +98,15 @@ class GuestController extends Controller
         {
             $data_unit = unit::all();
         }
-
+        
+        if(count($data_unit) == 0)
+        {
+            $data_empty = "Data not found";
+        }
+        else{
+            $data_empty = NULL;
+        }
+        // dd($data_empty != NULL);
 
         // $data_unit = Unit::where('proyek','LIKE',"%$searchText%")->where('lokasi','=',"$searchLoc")->get();
         $data_lokasi = Unit::select('lokasi')->distinct()->whereNotNull('lokasi')->get();
@@ -106,6 +114,6 @@ class GuestController extends Controller
         // $data_lokasi = Unit::where('lokasi','=',"$searchLoc")->get();
         // $data_tipe_properti = Unit::where('tipe_properti','=',"$searchType")->get();
 
-        return view('unit', compact('data_unit', 'data_lokasi', 'data_tipe_properti'));
+        return view('unit', compact('data_empty', 'data_unit', 'data_lokasi', 'data_tipe_properti'));
     }
 }
